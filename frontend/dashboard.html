@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.min.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      
+      <h1 id="welcomeMessage">Dobrodošli!</h1>
+      <p id="instruction">Prilagođavamo sadržaj...</p>
+
+      <div id="mentorSection">
+        <h2>Lista dostupnih mentora</h2>
+        <div id="mentorList" class="mentor-list">
+          <!-- Dinamički generisana lista mentora -->
+        </div>
+      </div>
+      <!-- Modal za zakazivanje sesije -->
+      <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Zakazivanje Sesije</h2>
+          <form id="scheduleForm">
+            <p id="selectedMentorName"></p>
+            <input type="hidden" id="selectedMentorId" />
+            <label for="date">Datum i vreme:</label>
+            <input type="datetime-local" id="date" required />
+
+            <label for="description">Opis (opciono):</label>
+            <textarea
+              id="description"
+              rows="4"
+              placeholder="Dodajte kratak opis"
+            ></textarea>
+
+            <button type="submit">Zakaži Sesiju</button>
+          </form>
+        </div>
+      </div>
+      <div id="sessionsSection">
+        <h2>Zakazane Sesije</h2>
+        <div id="sessionsList">
+          <!-- Lista zakazanih sesija će biti ovde prikazana -->
+        </div>
+      </div>
+    </div>
+    <div id="chatSection">
+      <div id="mente-selector">
+      <label id="mente-selector-label" for="mentee-select">Odabebite mentee-a</label>
+      <select id="mentee-select">
+        <option value="" disabled selected>Odaberite mentee-a</option>
+      </select></div>
+      <label id="mentor-select-label" for="mentor-select">Select Mentor:</label>
+      <select id="mentor-select"></select>
+      <h2>Chat</h2>
+      <div id="chatBox" class="chat-box"></div>
+      <input type="text" id="chatInput" placeholder="Unesite poruku..." />
+      <button onclick="">Pošalji</button>
+    </div>
+    <button id="logoutBtn">Odjava</button>
+  </body>
+</html>

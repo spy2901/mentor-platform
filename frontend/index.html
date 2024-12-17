@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentorska Platforma</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <img src="logo.png" alt="logo" id="logo">
+      <h1>Registracija</h1>
+      <input type="text" id="ime" placeholder="Ime" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="lozinka" placeholder="Lozinka" required />
+      <select id="tip">
+        <option value="mentor">Mentor</option>
+        <option value="mentee">Mentee</option>
+      </select>
+      <input
+        type="text"
+        id="vestine"
+        placeholder="Veštine/Interesi (odvojene zarezima)"
+      />
+      <button onclick="register()">Registruj se</button>
+
+      <h1>Prijava</h1>
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Lozinka"
+        required
+      />
+      <button onclick="login()">Prijavi se</button>
+    </div>
+  </body>
+  <script src="./js/app.js"></script>
+</html>
